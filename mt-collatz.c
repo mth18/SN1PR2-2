@@ -81,7 +81,7 @@ int oddNumFunction(num)
 	return ((3*num) +1);
 }
 
-val * creatingVal(int numb)
+val * creatingVal(int numb)					//creates a val pointer to the struct val
 {
 	val * temp = (val*)malloc(sizeof(val) +1);
 	temp->szHist = numb;
@@ -93,7 +93,7 @@ val * creatingVal(int numb)
 	}
 }
 
-void * destroyVal(val * values)
+void * destroyVal(val * values)				//destroys the val pointer to the struct val
 {
 	free(values->histogram);
 	free(values);
