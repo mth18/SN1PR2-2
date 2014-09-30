@@ -10,7 +10,7 @@ typedef struct val
 {
 	int * number; 		//the current number
 	int szHist;			//the size of the histogram
-	int ** histogram;	//the actual histogram
+	int * histogram;	//the actual histogram
 }val;
 
 int isEven(int num);
@@ -31,7 +31,7 @@ void creatingThreads(int num, int threadNums, val * values);
 
 void slow(int n);
 
-val * creatingVal(int threads);
+val * creatingVal(int numb);
 
 void * destroyVal(val * values);
 
