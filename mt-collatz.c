@@ -28,7 +28,7 @@ int main(int argc, char ** argv)
 	return 0;
 }
 
-void startRun(int num, int threads)
+void startRun(int num, int threads)  //starts the implementation for the program
 {
 	if(threads < 1)
 	{
@@ -39,4 +39,31 @@ void startRun(int num, int threads)
 	creatingThreads(num, threads, values);
 
 	pthread_exit(NULL); 
+}
+
+int isEven(int num)			//asks the question is this number even? returns 1 if true O if false
+{
+	int ans = 0;
+	if((num%2) == 0)
+		ans = 1;
+	return ans;
+}
+
+int collatz(int num)
+{
+	int ans = 0, i = num;
+	while(i > 1)
+	{
+		if(isEven(num))
+		{
+			i = evenNumFunction(i);
+			ans++;
+		}
+		if(!(isEven(i)))
+		{
+		 	i = oddNumFunction(i);
+		 	ans++;
+		}
+	}
+	return ans;
 }
